@@ -6,7 +6,6 @@ import common from '../_common';
 
 const sidebar = angular.module('app.components.sidebar', [
     common.name
-])
-    .controller(SidebarController.name, SidebarController);
+]).controller(SidebarController.name, SidebarController);
 
-export default {sidebar, sidebarHtml, SidebarController};
+export {sidebar, sidebarHtml, SidebarController};

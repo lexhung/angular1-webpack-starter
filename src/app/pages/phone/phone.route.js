@@ -37,7 +37,7 @@ function getStates () {
                     loadModule: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                         return $q((resolve) => {
                             require.ensure([], () => {
-                                $ocLazyLoad.load({name: require('./index').name});
+                                $ocLazyLoad.load({name: require('./index').default.name});
                                 resolve();
                             }, 'phone');
                         });

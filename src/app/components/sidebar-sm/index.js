@@ -9,4 +9,4 @@ const sidebarSm = angular.module('app.components.sidebarSm', [
 ])
     .controller(SidebarSmController.name, SidebarSmController);
 
-export default {sidebarSm, sidebarSmHtml, SidebarSmController};
+export {sidebarSm, sidebarSmHtml, SidebarSmController};

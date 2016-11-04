@@ -12,8 +12,8 @@ describe('HomeHero Directive', () => {
     beforeEach(() => {
         angular.mock.inject(($compile, $rootScope) => {
             const scope = $rootScope.$new();
-            const tempalte = '<aio-home-hero get-started-link="test.link"></aio-home-hero>';
-            element = $compile(tempalte)(scope);
+            const template = '<aio-home-hero get-started-link="test.link"></aio-home-hero>';
+            element = $compile(template)(scope);
             scope.$digest();
         });
     });

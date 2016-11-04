@@ -16,7 +16,7 @@ function getStates () {
                         templateProvider: ['$q', ($q) => {
                             return $q((resolve) => {
                                 require.ensure([], () => {
-                                    resolve(require('./home.jade'));
+                                    return resolve(require('./home.jade'));
                                 }, 'home');
                             });
                         }]
@@ -32,8 +32,8 @@ function getStates () {
                     loadModule: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                         return $q((resolve) => {
                             require.ensure([], () => {
-                                $ocLazyLoad.load({name: require('./index').name});
-                                resolve();
+                                $ocLazyLoad.load({name: require('./index').default.name});
+                                return resolve();
                             }, 'home');
                         });
                     }]

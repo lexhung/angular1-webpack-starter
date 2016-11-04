@@ -1,5 +1,5 @@
 const [isLoggedIn, userInfo] = [Symbol(), Symbol()];
-class UserSerivce {
+class UserService {
     constructor ($http, $q, $rootScope, Event, AjaxError) {
         Object.assign(this, {$http, $q, $rootScope, Event, AjaxError});
         // private variable
@@ -40,6 +40,7 @@ class UserSerivce {
             email,
             password
         };
+
         function _success (response) {
             const data = response.data;
             if (response.status === 200 && data.code === 0) {
@@ -111,6 +112,6 @@ class UserSerivce {
     }
 }
 
-UserSerivce.$inject = ['$http', '$q', '$rootScope', 'Event', 'AjaxErrorHandler'];
+UserService.$inject = ['$http', '$q', '$rootScope', 'Event', 'AjaxErrorHandler'];
 
-export default UserSerivce;
+export default UserService;

@@ -35,10 +35,11 @@ var plugins = [
         chunks: ['app', 'vendor'],
         favicon: 'favicon.ico',
         appName: appName
-    }),
-    new CopyWebpackPlugin([
-        { from: './node_modules/babel-core/browser-polyfill.min.js', to: 'polyfill.js'}
-    ])
+    })
+    // ,
+    // new CopyWebpackPlugin([
+    //     { from: './node_modules/babel-core/browser-polyfill.min.js', to: 'polyfill.js'}
+    // ])
 ];
 
 if (isProd) {
@@ -76,7 +77,7 @@ module.exports = {
         ]
     },
     output: {
-        path: `${base}/_dist`,
+        path: `${base}/_dev`,
         filename: isProd ? '[name].[hash].js' : '[name].js',
         chunkFilename: isProd ? '[name].[hash].chunk.js' : '[name].chunk.js'
     },
@@ -91,7 +92,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel?presets[]=es2015',
                 exclude: /node_modules/
             },
             {
@@ -105,11 +106,11 @@ module.exports = {
             },
             {
                 test: /\.styl$/,
-                loader: ExtractTextPlugin.extract('vue-style', 'css?sourceMap!postcss!stylus')
+                loader: "style!css?sourceMap!stylus"
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('vue-style', 'css?sourceMap')
+                loader: 'css?sourceMap'
             },
             {
                 test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
@@ -125,7 +126,7 @@ module.exports = {
     debug: !isProd,
     devtool: isProd ? 'source-map' : 'eval-source-map',
     devServer: {
-        contentBase: `${base}/_dist`,
+        contentBase: `${base}/_dev`,
         historyApiFallback: true,
         stats: {
             modules: false,
