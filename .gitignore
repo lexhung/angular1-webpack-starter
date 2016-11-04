@@ -6,6 +6,8 @@ npm-debug.log
 
 # build file
 build
+_dist
+_dev
 
 # test folder
 src/test/e2e/screenshots/
