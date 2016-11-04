@@ -1,0 +1,9 @@
+.phone-main-view.full-width
+    a.btn-add-new.btn.btn-large.green.waves-effect.waves-light(ui-sref="root.layout.phone.add")
+        i.mdi-content-add-box.left
+        | Add New
+    aio-phone-table(
+        phones="vm.phones",
+        first-button-click="vm.gotoPhoneDetail(phone)",
+        second-button-click="vm.deletePhone(phone)"
+    )

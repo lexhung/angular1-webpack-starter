@@ -1,0 +1,14 @@
+@import '../../components/_common/styles/common'
+
+.loading-view
+    width 100%
+    z-index 1000
+    position fixed
+    top 0
+    left 0
+    .progress
+        box-shadow: 0 0 5px $loadingBarShodowColor
+        margin 0
+        background-color $loadingBarColor
+        .indeterminate
+            background-color $loadingBgColor

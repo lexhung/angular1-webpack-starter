@@ -1,0 +1,45 @@
+@import '../_common/styles/common'
+
+body
+    .wrapper
+        display flex
+        flex-direction column
+        background-image url('./bg.png')
+        background-size cover
+        .ie &
+            height 100vh
+        .no-ie &
+            min-height 100vh
+.content
+    margin-top $headerHeight
+    +sm()
+        margin-top $headerHeightForMobile
+    display flex
+    flex 1 1 auto
+    .main-content
+        flex 1 1 auto
+        display flex
+        flex-direction column
+        overflow hidden
+        .main-view
+            flex 1 1 auto
+            display flex
+            justify-content center
+            align-items center
+            padding 0.5rem 0 1rem 0
+            +sm()
+                margin-left 8px
+                margin-right 8px
+            &.ng-enter
+                animation bounceIn .8s
+            .full-width
+                align-self flex-start
+                padding 10px 30px 20px 30px
+                width 100%
+
+.dropdown-content
+    width auto !important
+
+.select-dropdown
+    > li.disabled > span
+        color rgba(0, 0, 0, .3)

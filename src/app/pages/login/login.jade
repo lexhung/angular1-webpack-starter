@@ -1,0 +1,8 @@
+- require('./login.styl')
+.login-view
+    aio-login-form(
+        need-check-login="vm.needCheckLogin",
+        user-info="vm.userInfo",
+        route-after-login="{{vm.routeAfterLogin}}",
+        login-error="vm.loginError"    
+    )

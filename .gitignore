@@ -8,5 +8,5 @@ npm-debug.log
 build
 
 # test folder
-source/test/e2e/screenshots/
-source/test/unit/results/
+src/test/e2e/screenshots/
+src/test/unit/results/
